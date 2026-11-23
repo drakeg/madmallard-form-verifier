@@ -12,7 +12,7 @@ A synthetic demo for agencies that maintain lead-generation sites. Two forms can
 docker compose up --build -d demo
 ```
 
-Open http://localhost:8098. Paste a fresh UUID (run `uuidgen | tr 'A-F' 'a-f'`), leave the synthetic email in place, and submit. Return to the demo and look up the same UUID. Repeat with a fresh UUID and **Suppress receipt**. Use `DEMO_PORT` to change the host port or `DEMO_BIND=0.0.0.0` to share the synthetic demo on a trusted LAN. Receipts are held in memory and reset when the server restarts.
+Open http://localhost:8098. Copy the prefilled test ID, leave the synthetic email in place, and submit. Return to the demo and look up the copied ID. Repeat with the new prefilled ID and **Suppress receipt**. Use `DEMO_PORT` to change the host port or `DEMO_BIND=0.0.0.0` to share the synthetic demo on a trusted LAN. Receipts are held in memory and reset when the server restarts.
 
 ## Run the repeatable verification
 

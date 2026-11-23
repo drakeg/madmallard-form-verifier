@@ -28,6 +28,8 @@ try {
       if (mode) {
         await input.fill(id);
         await page.getByLabel('Delivery simulation').selectOption(mode);
+      } else {
+        await input.clear();
       }
       const posts = [];
       page.on('request', request => {
