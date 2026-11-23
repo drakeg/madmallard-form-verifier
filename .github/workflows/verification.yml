@@ -1,0 +1,15 @@
+name: Browser verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: mkdir -p evidence
+      - run: DEMO_UID=$(id -u) DEMO_GID=$(id -g) docker compose run --build --rm verify
+      - uses: actions/upload-artifact@v7
+        with:
+          name: synthetic-delivery-evidence
+          path: evidence/
