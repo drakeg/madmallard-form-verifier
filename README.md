@@ -1,6 +1,6 @@
 # Mad Mallard Form Verifier
 
-[![Node.js](https://img.shields.io/badge/Node.js-runtime-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![Playwright](https://img.shields.io/badge/Playwright-1.64.1-2EAD33)](https://playwright.dev/) [![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](compose.yml)
+[![Node.js](https://img.shields.io/badge/Node.js-runtime-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![Playwright](https://img.shields.io/badge/Playwright-1.65.1-2EAD33)](https://playwright.dev/) [![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](compose.yml)
 
 [![Browser verification](https://github.com/drakeg/madmallard-form-verifier/actions/workflows/verification.yml/badge.svg)](https://github.com/drakeg/madmallard-form-verifier/actions/workflows/verification.yml) [![License](https://img.shields.io/github/license/drakeg/madmallard-form-verifier)](LICENSE) [![Issues](https://img.shields.io/github/issues/drakeg/madmallard-form-verifier)](https://github.com/drakeg/madmallard-form-verifier/issues) [![Pull requests](https://img.shields.io/github/issues-pr/drakeg/madmallard-form-verifier)](https://github.com/drakeg/madmallard-form-verifier/pulls)
 
