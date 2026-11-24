@@ -3,7 +3,7 @@ services:
     build: .
     init: true
     ports:
-      - "${DEMO_BIND:-127.0.0.1}:${DEMO_PORT:-8098}:8098"
+      - "${DEMO_BIND:-0.0.0.0}:${DEMO_PORT:-8098}:8098"
   verify:
     build: .
     profiles: [test]
