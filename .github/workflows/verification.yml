@@ -6,7 +6,7 @@ jobs:
   browser:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - run: mkdir -p evidence
       - run: DEMO_UID=$(id -u) DEMO_GID=$(id -g) docker compose run --build --rm verify
       - uses: actions/upload-artifact@v7
