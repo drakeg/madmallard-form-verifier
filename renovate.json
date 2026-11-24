@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "playwright",
+        "mcr.microsoft.com/playwright"
+      ],
+      "groupName": "Playwright package and browser image",
+      "groupSlug": "playwright-paired"
+    }
   ]
 }
