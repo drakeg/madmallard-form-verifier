@@ -6,3 +6,5 @@ Use semantic versioning and tag reviewed releases after browser CI passes.
 
 Synthetic quote form, simulated receipt lookup, browser checks, evidence report and agency pilot template.
 The demo pre-fills the test ID for manual demonstrations.
+
+The demo uses a lightweight Node.js container and CI checks the published HTTP port.
