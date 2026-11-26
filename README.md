@@ -12,7 +12,7 @@ A synthetic demo for agencies that maintain lead-generation sites. Two forms can
 docker compose up --build -d demo
 ```
 
-Open http://localhost:8098. Copy the prefilled test ID, leave the synthetic email in place, and submit. Return to the demo and look up the copied ID. Repeat with the new prefilled ID and **Suppress receipt**. Devices on the same network can open `http://<docker-host-lan-ip>:8098`. Use `DEMO_PORT` to change the host port or `DEMO_BIND=127.0.0.1` to restrict access to the Docker host. The demo uses a lightweight Node.js image. The browser verification service uses the Playwright image. Receipts are held in memory and reset when the server restarts.
+Open http://localhost:8098. Leave the synthetic email in place, submit, then select **Check this receipt** to verify delivery. Repeat with **Suppress receipt** to see how an accepted request can still have unverified delivery. The **Verify delivery** panel also accepts a test ID from an earlier submission. Devices on the same network can open `http://<docker-host-lan-ip>:8098`. Use `DEMO_PORT` to change the host port or `DEMO_BIND=127.0.0.1` to restrict access to the Docker host. The demo uses a lightweight Node.js image. The browser verification service uses the Playwright image. Receipts are held in memory and reset when the server restarts.
 
 ## Run the repeatable verification
 

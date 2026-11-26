@@ -14,6 +14,20 @@ try {
   const base = `http://127.0.0.1:${server.address().port}`;
   browser = await chromium.launch({executablePath: process.env.CHROMIUM_PATH});
   const rows = [];
+  const layout = await browser.newPage();
+  try {
+    for (const width of [390, 768, 1024, 1440]) {
+      await layout.setViewportSize({width, height: 900});
+      await layout.goto(base);
+      assert.equal(await layout.evaluate(() => document.documentElement.scrollWidth), width);
+      await layout.keyboard.press('Tab');
+      assert.equal(await layout.locator('header a').evaluate(link => link.matches(':focus-visible')), true);
+      await layout.keyboard.press('Tab');
+      assert.equal(await layout.locator('#test-id').evaluate(input => input.matches(':focus-visible')), true);
+    }
+  } finally {
+    await layout.close();
+  }
   for (const [name, mode, profile] of [
     ['desktop', 'deliver', {viewport: {width: 1280, height: 800}}],
     ['mobile', 'drop', devices['Pixel 7']],
@@ -46,7 +60,13 @@ try {
       }
       await page.screenshot({path: new URL(name + '.png', evidence).pathname});
       if (mode) {
-        const response = await page.goto(base + '/receipt?id=' + id);
+        const receiptLink = page.getByRole('link', {name: 'Check this receipt'});
+        assert.equal(await receiptLink.getAttribute('href'), '/receipt?id=' + id);
+        const [response] = await Promise.all([
+          page.waitForResponse(base + '/receipt?id=' + id),
+          receiptLink.click(),
+        ]);
+        await page.getByText(mode === 'deliver' ? 'Delivery confirmed' : 'Delivery unverified', {exact: true}).waitFor();
         assert.equal(response.status(), mode === 'deliver' ? 200 : 404);
         if (mode === 'deliver') assert.equal(await page.locator('code').textContent(), id);
         await page.screenshot({path: new URL(name + '-receipt.png', evidence).pathname});
