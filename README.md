@@ -21,7 +21,7 @@ mkdir -p evidence
 DEMO_UID=$(id -u) DEMO_GID=$(id -g) docker compose run --build --rm verify
 ```
 
-Open `evidence/report.html` for a single file with embedded screenshots. Use the browser’s Print command to save a PDF. The Markdown report and individual PNGs are also in `evidence/`. The script starts its own isolated synthetic server and attempts two valid submissions. The desktop case confirms a matching record. The mobile case deliberately drops delivery. The missing-field case checks that the browser blocks the POST. On a Node.js host you can also run `npm ci`, `npx playwright install chromium`, and `npm test`.
+Open `evidence/report.html` for a single file with embedded screenshots. Open `evidence/report.pdf` for a ready-to-share PDF generated from the same report. The Markdown report and individual PNGs are also in `evidence/`. The script starts its own isolated synthetic server and attempts two valid submissions. The desktop case confirms a matching record. The mobile case deliberately drops delivery. The missing-field case checks that the browser blocks the POST. On a Node.js host you can also run `npm ci`, `npx playwright install chromium`, and `npm test`.
 
 ## Agency pilot
 
