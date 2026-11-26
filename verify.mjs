@@ -129,10 +129,16 @@ ${sections.join('')}
     const decoded = await reportPage.locator('img').evaluateAll(images =>
       images.filter(image => image.complete && image.naturalWidth > 0).length);
     assert.equal(decoded, 5);
+    const pdf = await reportPage.pdf({
+      path: new URL('report.pdf', evidence).pathname,
+      format: 'A4',
+      margin: {top: '12mm', right: '12mm', bottom: '12mm', left: '12mm'},
+    });
+    assert.equal(pdf.subarray(0, 5).toString('ascii'), '%PDF-');
   } finally {
     await reportPage.close();
   }
-  console.log('Passed desktop, mobile, and missing-field browser cases. See evidence/report.html or evidence/report.md.');
+  console.log('Passed desktop, mobile, and missing-field browser cases. See evidence/report.pdf, evidence/report.html, or evidence/report.md.');
 } finally {
   await browser?.close();
   server.close();

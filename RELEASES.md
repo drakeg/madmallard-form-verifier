@@ -12,3 +12,5 @@ The demo pre-fills the test ID for manual demonstrations.
 The demo uses a lightweight Node.js container and CI checks the published HTTP port.
 
 Verification exports a printable HTML report with embedded screenshots.
+
+Verification generates a ready-to-share PDF alongside the HTML and Markdown reports.
