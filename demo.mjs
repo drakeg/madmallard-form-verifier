@@ -17,6 +17,7 @@ a{color:#0b594e;text-underline-offset:.2em}
 :focus-visible{outline:3px solid #2861a2;outline-offset:3px}
 header{background:#102f35;color:#fff;border-bottom:4px solid #8bd0b6}
 header a{display:inline-block;color:inherit;font-weight:750;text-decoration:none;padding-block:.9rem}
+header a:focus-visible{outline-color:#fff;outline-offset:-3px}
 .wrap{width:min(100% - 2rem,68rem);margin-inline:auto}
 main{padding-block:clamp(2rem,6vw,4.5rem)}
 h1,h2,p{margin:0}
