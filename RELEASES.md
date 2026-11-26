@@ -8,3 +8,5 @@ The demo separates submission from receipt lookup and links directly to the rece
 
 Synthetic quote form, simulated receipt lookup, browser checks, evidence report and agency pilot template.
 The demo pre-fills the test ID for manual demonstrations.
+
+The demo uses a lightweight Node.js container and CI checks the published HTTP port.
