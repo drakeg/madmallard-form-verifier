@@ -1,4 +1,4 @@
-FROM node:24-bookworm-slim AS demo
+FROM node:26-bookworm-slim AS demo
 WORKDIR /app
 COPY demo.mjs ./
 ENV HOST=0.0.0.0
