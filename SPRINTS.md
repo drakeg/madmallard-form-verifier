@@ -6,3 +6,5 @@ The initial GitHub Actions browser run passed all three cases and uploaded the s
 
 ## Sprint 1 · Agency pilot
 Acceptance requires a signed-off scope, a named confirmation contact and an agency-reviewed evidence report with a retest record when applicable.
+
+Use the [pilot run sheet](PILOT.md) to capture scope, the five-submission allowance, destination evidence, and the outcome of one retest.
