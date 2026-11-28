@@ -6,6 +6,12 @@
 
 A synthetic demo for agencies that maintain lead-generation sites. Two forms can show the same confirmation while only one produces a matching receipt.
 
+## Review a sample report
+
+Open the [Browser verification runs on `main`](https://github.com/drakeg/madmallard-form-verifier/actions/workflows/verification.yml?query=branch%3Amain), choose a successful run, and download **synthetic-delivery-evidence** from its Artifacts section while signed in to GitHub. Unzip it and open `report.pdf`, or open `report.html` for the same report in a browser. If the artifact has expired, generate a fresh copy with the verification command below.
+
+The sample shows a confirmed desktop receipt, an accepted mobile request with unverified delivery, and a missing-field submission blocked by the browser. The results are from a synthetic form and demo receipt store.
+
 ## Run the demo
 
 ```sh
